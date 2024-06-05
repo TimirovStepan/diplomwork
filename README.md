@@ -11,3 +11,15 @@
 - diplomwork_routines
 
 После импорта базы данных необходимо запустить PyCharm Community Edition 2024.1.1 и открыть ваил под названием login.py и запустить
+
+
+В случае проблем с компиляции ввести в терминал 
+pyinstaller --noconfirm --onedir --windowed  "Путь к файлу"
+После же закинуть остальные файлы к скопелированной папке, то есть в папке должны оказатся файл
+- main1.py
+- add.png
+- delete.pgn
+- exit.png
+- refresh.png
+- search.png
+- update.png
