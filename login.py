@@ -20,9 +20,6 @@ def create_window():
 def show_info():
     showinfo(title="Информация", message="Успешный вход")
 
-def show_info1():
-    show_info1(title="Информация", message="Пользователь удален")
-
 def show_error():
     showerror(title="Ошибка", message="Сообщение об ошибке")
 
@@ -42,18 +39,8 @@ def login():
         showerror("Ошибка", "Неверное имя пользователя или пароль")
 
 
-def register():
-    username = entry_username.get()
-    password = entry_password.get()
-
-    mycursor.execute("INSERT INTO data (user, passw) VALUES (%s, %s)", (username, password))
-    mydb.commit()
-    create_window()
-    showinfo("Успешная регистрация", "Регистрация выполнена успешно!")
-
-
 root = Tk()
-root.title("Вход и регистрация")
+root.title("Авторихация")
 root.geometry("200x200+600+250")
 root.resizable(False, False)
 
@@ -69,25 +56,6 @@ entry_password.pack()
 
 btn_login = Button(root, text="Войти", command=login)
 btn_login.pack()
-
-btn_register = Button(root, text="Зарегистрироваться", command=register)
-btn_register.pack()
-
-root.mainloop()
-
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="comicsans21",
-    database="diplomwork",
-    charset="utf8",
-    use_unicode=True
-)
-
-mycursor = mydb.cursor()
-
-def create_window():
-    os.system('python main1.py')
 
 
 root.mainloop()
